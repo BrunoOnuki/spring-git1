@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div	ng-app="myApp" 
+				ng-controller="UsuarioController">
+			
+			<ul>
+				<li ng-repeat="cliente in clientes">
+					{{cliente.nome}}, {{cliente.idade}}
+				</li>				
+			</ul>
+			
+			<form>
+				<fieldset>
+					<legend> Adicionar </legend>
+					<label> Nome: </label> <input type="text" ng-model"nome">
+					<label> Idade: </label> <input type="text" ng-model"idade">
+					<button ng-click="inserir()"> Adicionar </button>
+				</fieldset>
+			</form>
+		</div>
+		
+		<script>
+			var app = angular.module('myApp',[]);
+			app.controller('UsuarioController', function($scope) {
+				
+			});
+		</script>
+	</body>
+</html>
