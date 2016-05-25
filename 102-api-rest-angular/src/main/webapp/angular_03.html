@@ -18,8 +18,8 @@
 			<form>
 				<fieldset>
 					<legend> Adicionar </legend>
-					<label> Nome: </label> <input type="text" ng-model"nome">
-					<label> Idade: </label> <input type="text" ng-model"idade">
+					<label> Nome: </label> <input type="text" ng-model="nome">
+					<label> Idade: </label> <input type="text" ng-model="idade">
 					<button ng-click="inserir()"> Adicionar </button>
 				</fieldset>
 			</form>
@@ -28,6 +28,21 @@
 		<script>
 			var app = angular.module('myApp',[]);
 			app.controller('UsuarioController', function($scope) {
+				$scope.clientes = [
+					{"nome": "Marciano", "idade": 30},
+					{"nome": "Joana", "idade": 25}
+				];
+				
+				$scope.nome="";
+				$scope.idade="";
+				
+				$scope.inserir = function()
+				{
+					$scope.clientes.push({
+						"nome": $scope.nome,
+						"idade": $scope.idade
+					});
+				}
 				
 			});
 		</script>

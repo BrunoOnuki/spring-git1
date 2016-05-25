@@ -7,7 +7,7 @@
 	</head>
 	<body ng-app="myApp">
 		<div ng-controller="ContadorController">
-			<p> Contador: {{i}} </p>
+			<p> Contador: {{i}}</p>
 			<button ng-click="incrementar();">
 				Incrementar
 			</button>
@@ -17,7 +17,7 @@
 			var app = angular.module('myApp', []);
 			app.controller ("ContadorController", function($scope){
 				
-				$scope.i = i;
+				$scope.i = 1;
 				
 				$scope.incrementar = function(){
 					$scope.i++;
